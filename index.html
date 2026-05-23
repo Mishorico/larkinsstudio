@@ -422,7 +422,7 @@ function de(e,pi){
 
 // EMAIL
 function revealEmail(el){
-  const email='mysketching7@gmail.com';
+  const email='hello@larkinsstudio.com';
   navigator.clipboard.writeText(email).then(()=>{
     el.textContent='✓ '+email+' — copied!';
   }).catch(()=>{ el.textContent=email; el.onclick=()=>window.location.href='mailto:'+email; });
