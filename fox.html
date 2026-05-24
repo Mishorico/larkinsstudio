@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cozy Reading Fox — Cross Stitch Pattern | LarkinsStudio</title>
+<meta name="description" content="A little fox curled up in an armchair with a book and a warm blanket. PDF cross stitch pattern, instant download, full DMC colour list included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E4DGQ7PRYG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E4DGQ7PRYG');
+</script>
+<style>
+  :root {
+    --sage: #6b8f71;
+    --sage-dark: #4a6b50;
+    --linen: #f5f0eb;
+    --beige: #e8ddd0;
+    --warm-brown: #8b6f5e;
+    --text: #2c2c2c;
+    --text-muted: #7a7068;
+    --white: #ffffff;
+    --sale-red: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', serif;
+    background: var(--linen);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--linen);
+    border-bottom: 1px solid var(--beige);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--sage-dark);
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: .85rem;
+    transition: color .2s;
+  }
+  .nav-back:hover { color: var(--text); }
+  .nav-back svg { width: 16px; height: 16px; }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+
+  .nav-buy {
+    background: var(--sage);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: .8rem;
+    letter-spacing: .05em;
+    transition: background .2s;
+  }
+  .nav-buy:hover { background: var(--sage-dark); }
+
+  /* MAIN LAYOUT */
+  .product-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media(max-width: 768px) {
+    .product-layout { grid-template-columns: 1fr; gap: 32px; padding: 24px 16px 60px; }
+  }
+
+  /* GALLERY */
+  .gallery { position: sticky; top: 80px; }
+
+  .main-image {
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--beige);
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+    transition: transform .3s;
+  }
+  .main-image img:hover { transform: scale(1.02); }
+
+  .thumbnails {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color .2s;
+    flex-shrink: 0;
+  }
+  .thumb.active { border-color: var(--sage); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  @media(max-width: 768px) {
+    .gallery { position: static; }
+    .thumb { width: 56px; height: 56px; }
+  }
+
+  /* PRODUCT INFO */
+  .product-info { }
+
+  .breadcrumb {
+    font-size: .78rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--sage-dark); }
+
+  .product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  @media(max-width: 768px) { .product-title { font-size: 1.6rem; } }
+
+  .price-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .price-current {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--text);
+  }
+
+  .price-original {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  .sale-badge {
+    background: var(--sale-red);
+    color: white;
+    font-size: .72rem;
+    font-family: 'Lora', serif;
+    letter-spacing: .06em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .sale-note {
+    font-size: .8rem;
+    color: var(--sale-red);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .buy-btn {
+    display: block;
+    width: 100%;
+    background: var(--sage);
+    color: white;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+    transition: background .2s, transform .1s;
+    margin-bottom: 12px;
+  }
+  .buy-btn:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+  .buy-note {
+    text-align: center;
+    font-size: .78rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--beige);
+    margin: 24px 0;
+  }
+
+  /* TAGS */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .tag {
+    background: var(--beige);
+    color: var(--warm-brown);
+    font-size: .75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: .04em;
+  }
+
+  /* DESCRIPTION */
+  .section-label {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-size: .95rem;
+    color: var(--text);
+    margin-bottom: 24px;
+    line-height: 1.8;
+  }
+
+  /* SPECS */
+  .specs {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid var(--beige);
+  }
+
+  .specs-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--linen);
+    font-size: .88rem;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { color: var(--text-muted); }
+  .spec-value { font-weight: 500; text-align: right; }
+
+  /* WHAT'S INCLUDED */
+  .included {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid var(--beige);
+  }
+
+  .included-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: .88rem;
+  }
+
+  .included-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--linen);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .included-text strong { display: block; font-size: .88rem; margin-bottom: 2px; }
+  .included-text span { color: var(--text-muted); font-size: .8rem; }
+
+  /* HOW TO GET */
+  .how-to {
+    margin-bottom: 24px;
+  }
+
+  .steps {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    font-size: .78rem;
+    color: var(--text-muted);
+  }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    background: var(--sage);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: .9rem;
+    margin: 0 auto 8px;
+  }
+
+  /* COPYRIGHT */
+  .copyright {
+    background: var(--linen);
+    border: 1px solid var(--beige);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: .78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* BOTTOM BUY */
+  .bottom-buy {
+    background: var(--white);
+    border-top: 1px solid var(--beige);
+    padding: 20px 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 99;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.06);
+  }
+
+  .bottom-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+  }
+
+  .bottom-price-orig {
+    font-size: .85rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    display: block;
+    font-family: 'Lora', serif;
+  }
+
+  .bottom-btn {
+    background: var(--sage);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: .95rem;
+    white-space: nowrap;
+    transition: background .2s;
+  }
+  .bottom-btn:hover { background: var(--sage-dark); }
+
+  @media(max-width: 480px) {
+    .bottom-buy { padding: 14px 16px; }
+    .bottom-btn { padding: 12px 20px; font-size: .85rem; }
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s, transform .5s; }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    All patterns
+  </a>
+  <a href="/" class="nav-logo">LarkinsStudio</a>
+  <a href="https://web.tribute.tg/d/JXd" target="_blank" rel="noopener" class="nav-buy">Buy — $5</a>
+</nav>
+
+<div class="product-layout">
+
+  <!-- GALLERY -->
+  <div class="gallery reveal">
+    <div class="main-image">
+      <img id="main-img" src="/fox-1.png" alt="Cozy Reading Fox cross stitch pattern">
+    </div>
+    <div class="thumbnails">
+      <div class="thumb active" onclick="setImg('/fox-1.png', this)">
+        <img src="/fox-1.png" alt="Fox pattern photo 1">
+      </div>
+      <div class="thumb" onclick="setImg('/fox-2.png', this)">
+        <img src="/fox-2.png" alt="Fox pattern photo 2">
+      </div>
+      <div class="thumb" onclick="setImg('/fox-3.png', this)">
+        <img src="/fox-3.png" alt="Fox pattern photo 3">
+      </div>
+      <div class="thumb" onclick="setImg('/fox-4.png', this)">
+        <img src="/fox-4.png" alt="Fox pattern photo 4">
+      </div>
+      <div class="thumb" onclick="setImg('/fox-5.jpeg', this)">
+        <img src="/fox-5.jpeg" alt="Fox pattern photo 5">
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="product-info">
+
+    <div class="breadcrumb reveal">
+      <a href="/">LarkinsStudio</a> → Patterns → Cozy Reading Fox
+    </div>
+
+    <h1 class="product-title reveal">Cozy Reading Fox 🦊📚<br>Cross Stitch Pattern — PDF</h1>
+
+    <div class="price-block reveal">
+      <span class="price-current">$5</span>
+      <span class="price-original">$6</span>
+      <span class="sale-badge">Save 17%</span>
+    </div>
+    <p class="sale-note reveal">Limited introductory price ✨</p>
+
+    <a href="https://web.tribute.tg/d/JXd" target="_blank" rel="noopener" class="buy-btn reveal">
+      Buy Pattern — Instant Download
+    </a>
+    <p class="buy-note reveal">PDF delivered to your email right after payment</p>
+
+    <hr class="divider">
+
+    <div class="tags reveal">
+      <span class="tag">Instant Download</span>
+      <span class="tag">PDF Pattern</span>
+      <span class="tag">DMC Colours</span>
+      <span class="tag">Beginner Friendly</span>
+      <span class="tag">Cozy</span>
+    </div>
+
+    <div class="reveal">
+      <p class="section-label">About this pattern</p>
+      <p class="description">
+        A little fox curled up in an armchair with a book and a warm blanket — this pattern is pure comfort.
+        Soft colours, gentle details, and a cosy mood that makes you want to pick up a needle straight away.
+        Whether you're stitching your first project or adding to a collection, this design is a joy to work on
+        from the very first stitch.
+      </p>
+      <p class="description">
+        The finished piece looks beautiful framed, works wonderfully as a gift for book lovers,
+        and brings a little woodland warmth to any room.
+      </p>
+    </div>
+
+    <div class="specs reveal">
+      <p class="specs-title">Pattern details</p>
+      <div class="spec-row">
+        <span class="spec-label">Size</span>
+        <span class="spec-value">132 × 127 stitches</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Fabric (recommended)</span>
+        <span class="spec-value">16 ct Aida, white</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Finished size on 16 ct</span>
+        <span class="spec-value">approx. 8¼ × 7⅞ in (21 × 20 cm)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Stitch types</span>
+        <span class="spec-value">Full cross stitches only</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Thread</span>
+        <span class="spec-value">DMC — full colour list included</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Language</span>
+        <span class="spec-value">English</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Format</span>
+        <span class="spec-value">PDF (digital download)</span>
+      </div>
+    </div>
+
+    <div class="included reveal">
+      <p class="included-title">What's inside the PDF</p>
+      <div class="included-item">
+        <div class="included-icon">🎨</div>
+        <div class="included-text">
+          <strong>Colour chart</strong>
+          <span>Full pattern in colour symbols with DMC floss legend</span>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🖤</div>
+        <div class="included-text">
+          <strong>Black & white chart</strong>
+          <span>For printing or stitching in low-light conditions</span>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📋</div>
+        <div class="included-text">
+          <strong>DMC thread list</strong>
+          <span>Full list of colours with quantities</span>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">✏️</div>
+        <div class="included-text">
+          <strong>Instructions</strong>
+          <span>Tips on fabric, framing, and getting started</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-to reveal">
+      <p class="section-label">How to get your pattern</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          Click "Buy Pattern" and complete payment
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          PDF is sent to your email automatically
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          Download, print, and start stitching 🧵
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="copyright reveal">
+      © 2026 LarkinsStudio. This pattern is for personal use only. Please do not share, resell or redistribute.
+      Finished items made from this pattern may not be sold commercially.
+    </div>
+
+  </div>
+</div>
+
+<!-- STICKY BUY BAR -->
+<div class="bottom-buy">
+  <div>
+    <span class="bottom-price-orig">$6</span>
+    <span class="bottom-price">$5</span>
+  </div>
+  <div style="flex:1;min-width:0;">
+    <div style="font-size:.78rem;color:var(--text-muted);">Cozy Reading Fox — PDF Pattern</div>
+    <div style="font-size:.78rem;color:var(--sage);">Instant download after payment ✓</div>
+  </div>
+  <a href="https://web.tribute.tg/d/JXd" target="_blank" rel="noopener" class="bottom-btn">
+    Buy Pattern
+  </a>
+</div>
+
+<script>
+function setImg(src, el) {
+  document.getElementById('main-img').src = src;
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Reveal on scroll
+const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting) i.target.classList.add('visible'); }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
