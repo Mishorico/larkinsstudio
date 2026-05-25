@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Strawberry Pattern — Larkinsstudio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #f7f3ee;
+    --green-dark: #3a5a3a;
+    --green-mid: #5a7a4a;
+    --red: #c04a3a;
+    --red-light: #e07060;
+    --text: #2a2018;
+    --muted: #7a6a58;
+  }
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+  .deco-border {
+    height: 4px;
+    background: linear-gradient(90deg, var(--green-dark), var(--red), var(--green-mid), var(--red-light), var(--green-dark));
+  }
+  nav {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(58,90,58,0.15);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--green-dark);
+    text-decoration: none;
+  }
+  .nav-home {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-home:hover { color: var(--green-dark); }
+  .hero {
+    padding: 48px 24px 0;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--green-dark);
+    color: var(--cream);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 7vw, 44px);
+    line-height: 1.15;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+  h1 em { color: var(--red); font-style: italic; }
+  .subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .berry-wrap {
+    margin: 0 auto 40px;
+    width: 110px;
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .what-you-get {
+    background: white;
+    border: 1px solid rgba(58,90,58,0.12);
+    border-radius: 16px;
+    padding: 28px 24px;
+    max-width: 480px;
+    margin: 0 auto 36px;
+    text-align: left;
+  }
+  .wg-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .wg-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(58,90,58,0.08);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .wg-item:last-child { border-bottom: none; }
+  .wg-icon {
+    width: 26px;
+    height: 26px;
+    background: #f0e8dc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* beehiiv form wrapper */
+  .form-section {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .form-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    text-align: center;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .form-note {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* override beehiiv embed styles */
+  .beehiiv-embed-wrap {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(58,90,58,0.12);
+  }
+</style>
+</head>
+<body>
+
+<div class="deco-border"></div>
+
+<nav>
+  <a href="/" class="nav-logo">Larkinsstudio</a>
+  <a href="/" class="nav-home">← Back to shop</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Free Pattern</div>
+  <h1>A little <em>strawberry</em><br>for your hoop</h1>
+  <p class="subtitle">
+    Subscribe to the Larkinsstudio newsletter and receive<br>
+    a free primitive strawberry cross stitch pattern —<br>
+    designed and stitched by hand.
+  </p>
+
+  <div class="berry-wrap">
+    <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="60" cy="28" rx="8" ry="18" fill="#3a5a3a" transform="rotate(-20 60 28)"/>
+      <ellipse cx="60" cy="28" rx="8" ry="18" fill="#3a5a3a" transform="rotate(20 60 28)"/>
+      <ellipse cx="60" cy="22" rx="6" ry="14" fill="#5a7a4a"/>
+      <path d="M30 50 Q20 90 60 130 Q100 90 90 50 Q75 35 60 38 Q45 35 30 50Z" fill="#c04a3a"/>
+      <ellipse cx="52" cy="70" rx="3" ry="2" fill="#e8c0a0" transform="rotate(-10 52 70)"/>
+      <ellipse cx="68" cy="70" rx="3" ry="2" fill="#e8c0a0" transform="rotate(10 68 70)"/>
+      <ellipse cx="47" cy="85" rx="3" ry="2" fill="#e8c0a0" transform="rotate(-5 47 85)"/>
+      <ellipse cx="60" cy="88" rx="3" ry="2" fill="#e8c0a0"/>
+      <ellipse cx="73" cy="85" rx="3" ry="2" fill="#e8c0a0" transform="rotate(5 73 85)"/>
+      <ellipse cx="52" cy="102" rx="3" ry="2" fill="#e8c0a0"/>
+      <ellipse cx="66" cy="104" rx="3" ry="2" fill="#e8c0a0"/>
+      <ellipse cx="44" cy="62" rx="7" ry="9" fill="#e07060" opacity="0.5"/>
+    </svg>
+  </div>
+</div>
+
+<div style="max-width:480px;margin:0 auto;padding:0 24px;">
+  <div class="what-you-get">
+    <div class="wg-title">What's included</div>
+    <div class="wg-item">
+      <div class="wg-icon">🎨</div>
+      <div>Full colour PDF chart with DMC thread codes</div>
+    </div>
+    <div class="wg-item">
+      <div class="wg-icon">📐</div>
+      <div>54 × 59 stitches — approx. 9 × 9 cm on 16ct aida</div>
+    </div>
+    <div class="wg-item">
+      <div class="wg-icon">🌿</div>
+      <div>Folk art primitive style — beginner friendly</div>
+    </div>
+    <div class="wg-item">
+      <div class="wg-icon">✉️</div>
+      <div>Delivered instantly to your inbox</div>
+    </div>
+  </div>
+</div>
+
+<div class="form-section">
+  <span class="form-label">Get the free pattern →</span>
+  <div class="beehiiv-embed-wrap">
+    <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="012c2b53-50ab-45cf-8c8d-92fe8d980aa0"></script>
+  </div>
+  <p class="form-note">No spam. Just cozy patterns. Unsubscribe anytime.</p>
+</div>
+
+</body>
+</html>
