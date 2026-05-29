@@ -49,6 +49,7 @@
     text-transform: uppercase;
   }
   .nav-home:hover { color: var(--green-dark); }
+
   .hero {
     padding: 48px 24px 0;
     text-align: center;
@@ -89,6 +90,76 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
   }
+
+  /* ── CAROUSEL ── */
+  .carousel-wrap {
+    max-width: 380px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    position: relative;
+  }
+  .carousel {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(58,90,58,0.15);
+    aspect-ratio: 1/1;
+    background: #e8e0d5;
+  }
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .carousel-slide.active { opacity: 1; }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .carousel-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(58,90,58,0.25);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    padding: 0;
+  }
+  .carousel-dot.active {
+    background: var(--green-dark);
+    transform: scale(1.3);
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(247,243,238,0.88);
+    border: 1px solid rgba(58,90,58,0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--green-dark);
+    transition: background 0.2s;
+    z-index: 2;
+  }
+  .carousel-btn:hover { background: white; }
+  .carousel-btn.prev { left: -14px; }
+  .carousel-btn.next { right: -14px; }
+
+  /* ── WHAT'S INCLUDED ── */
   .what-you-get {
     background: white;
     border: 1px solid rgba(58,90,58,0.12);
@@ -116,18 +187,25 @@
   }
   .wg-item:last-child { border-bottom: none; }
   .wg-icon {
-    width: 26px;
-    height: 26px;
+    width: 28px; height: 28px;
     background: #f0e8dc;
     border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
     flex-shrink: 0;
   }
+  .wg-item strong {
+    display: block;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .wg-item span {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
 
-  /* beehiiv form wrapper */
+  /* ── FORM ── */
   .form-section {
     max-width: 480px;
     margin: 0 auto;
@@ -148,8 +226,6 @@
     margin-top: 12px;
     line-height: 1.6;
   }
-
-  /* override beehiiv embed styles */
   .beehiiv-embed-wrap {
     background: white;
     border-radius: 12px;
@@ -193,42 +269,91 @@
     </svg>
   </div>
 </div>
-<div style="margin:0 auto 36px;max-width:340px;padding:0 24px;">
-  <img 
-    src="/straw-stitched.jpg" 
-    alt="Strawberry cross stitch pattern preview"
-    style="width:100%;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);"
-  >
-</div>
-<div style="max-width:480px;margin:0 auto;padding:0 24px;">
-  <div class="what-you-get">
-    <div class="wg-title">What's included</div>
-    <div class="wg-item">
-      <div class="wg-icon">🎨</div>
-      <div>Full colour PDF chart with DMC thread codes</div>
+
+<!-- PHOTO CAROUSEL -->
+<div class="carousel-wrap">
+  <div class="carousel" id="carousel">
+    <div class="carousel-slide active">
+      <img src="/straw-stitched.jpg" alt="Wild Strawberry — finished embroidery with lilac flowers">
     </div>
-    <div class="wg-item">
-      <div class="wg-icon">📐</div>
-      <div>54 × 59 stitches — approx. 9 × 9 cm on 16ct aida</div>
+    <div class="carousel-slide">
+      <img src="/straw-stitched-2.jpg" alt="Wild Strawberry — close-up detail">
     </div>
-    <div class="wg-item">
-      <div class="wg-icon">🌿</div>
-      <div>Folk art primitive style — beginner friendly</div>
-    </div>
-    <div class="wg-item">
-      <div class="wg-icon">✉️</div>
-      <div>Delivered instantly to your inbox</div>
-    </div>
+  </div>
+  <button class="carousel-btn prev" onclick="carouselMove(-1)" aria-label="Previous">‹</button>
+  <button class="carousel-btn next" onclick="carouselMove(1)" aria-label="Next">›</button>
+  <div class="carousel-dots">
+    <button class="carousel-dot active" onclick="carouselGo(0)"></button>
+    <button class="carousel-dot" onclick="carouselGo(1)"></button>
   </div>
 </div>
 
+<!-- WHAT'S INCLUDED -->
+<div style="max-width:480px;margin:0 auto;padding:0 24px;">
+  <div class="what-you-get">
+    <div class="wg-title">What's included in your free download</div>
+
+    <div class="wg-item">
+      <div class="wg-icon">🍓</div>
+      <div>
+        <strong>Wild Strawberry — PDF pattern</strong>
+        <span>5-page PDF: cover, colour chart, thread list with DMC codes, and two chart pages for comfortable stitching</span>
+      </div>
+    </div>
+
+    <div class="wg-item">
+      <div class="wg-icon">📱</div>
+      <div>
+        <strong>Pattern Keeper compatible PDF</strong>
+        <span>Optimised for use in the Pattern Keeper app — load it on your phone or tablet and stitch hands-free</span>
+      </div>
+    </div>
+
+    <div class="wg-item">
+      <div class="wg-icon">📐</div>
+      <div>
+        <strong>52 × 59 stitches — cottagecore folk art style</strong>
+        <span>Approx. 8 × 9 cm on 16ct aida · beginner friendly · 4 DMC colours</span>
+      </div>
+    </div>
+
+    <div class="wg-item">
+      <div class="wg-icon">✉️</div>
+      <div>
+        <strong>Delivered instantly to your inbox</strong>
+        <span>As a ZIP archive with all files inside</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FORM -->
 <div class="form-section">
   <span class="form-label">Get the free pattern →</span>
   <div class="beehiiv-embed-wrap">
     <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="012c2b53-50ab-45cf-8c8d-92fe8d980aa0"></script>
   </div>
-  <p class="form-note">No spam. Just cozy patterns. Unsubscribe anytime.</p>
+  <p class="form-note">No spam. Just cozy patterns and new releases. Unsubscribe anytime.</p>
 </div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots   = document.querySelectorAll('.carousel-dot');
+
+  function carouselGo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function carouselMove(dir) { carouselGo(current + dir); }
+
+  // Auto-advance every 4s
+  setInterval(() => carouselMove(1), 4000);
+</script>
 
 </body>
 </html>
